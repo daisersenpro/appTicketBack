@@ -1,0 +1,74 @@
+# Visual Studio / .NET common ignores
+.vs/
+*.user
+*.suo
+*.userosscache
+*.userprefs
+
+# Build results
+bin/
+obj/
+out/
+artifacts/
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# Publish output
+publish/
+*.PublishItems.cache
+
+# Logs
+TestResults/
+
+# Debug/Release files
+*.dll
+*.exe
+*.app
+*.appx
+*.msi
+
+# Local DB and cache
+*.mdf
+*.ldf
+*.sqlite
+*.db
+
+# User secrets and local configuration
+secrets.json
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.Local.json
+
+# Coverage and test artifacts
+coverage/
+*.coverage
+*.coveragexml
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Node (if frontend parts exist)
+node_modules/
+dist/
+
+# Ignore package lock or yarn lock if intentionally not tracking (change if you want to track)
+# package-lock.json
+# yarn.lock
+
+# GitHub generated temp files
+.gitattributes
