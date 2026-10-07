@@ -22,6 +22,8 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    //app.UseSwagger();
+    //app.UseSwaggerUI(); // <-- Asegúrate de tener esta línea para ver perubas con Swagger UI en el navegador
 }
 
 app.UseHttpsRedirection();

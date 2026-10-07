@@ -61,4 +61,26 @@ public class TicketsController : ControllerBase
 
         return NoContent();
     }
+
+    // Define que este método responde a solicitudes HTTP DELETE en la ruta "/api/tickets/{id}"
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteTicket(int id)
+    {
+        // 1. Busca el ticket en la base de datos usando el ID recibido en la URL
+        var ticket = await _context.Tickets.FindAsync(id);
+
+        // 2. Si el ticket no existe, devuelve un código HTTP 404 (No encontrado)
+        if (ticket == null) return NotFound();
+
+        // 3. Marca el ticket encontrado para ser eliminado del contexto de Entity Framework
+        _context.Tickets.Remove(ticket);
+
+        // 4. Guarda los cambios de manera asíncrona en la base de datos física
+        await _context.SaveChangesAsync();
+
+        // 5. Devuelve un código HTTP 204 (Sin contenido), indicando que se eliminó con éxito
+        return NoContent();
+    }
+
+
 }
