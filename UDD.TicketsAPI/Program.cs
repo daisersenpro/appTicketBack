@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using UDD.TicketsAPI.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,6 +11,10 @@ builder.Services.AddOpenApi();
 
 //var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 //Console.WriteLine($"CONEXIÓN EXITOSA: {connectionString}");
+
+//Ahora debemos registrar el AppDbContext en el archivo Program.cs para que la aplicación sepa cómo conectarse a la base de datos
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
