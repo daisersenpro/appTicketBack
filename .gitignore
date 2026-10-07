@@ -5,9 +5,9 @@
 *.userosscache
 *.userprefs
 
-# Build results
-bin/
-obj/
+# Build results (ignore bin/obj in any project folder)
+**/bin/
+**/obj/
 out/
 artifacts/
 
@@ -28,14 +28,16 @@ publish/
 *.PublishItems.cache
 
 # Logs
+*.log
 TestResults/
 
-# Debug/Release files
+# Debug/Release files and symbols
 *.dll
 *.exe
 *.app
 *.appx
 *.msi
+*.pdb
 
 # Local DB and cache
 *.mdf
@@ -43,8 +45,9 @@ TestResults/
 *.sqlite
 *.db
 
-# User secrets and local configuration
+# User secrets and local configuration (do not commit secrets or local overrides)
 secrets.json
+local.settings.json
 appsettings.Development.json
 appsettings.Local.json
 appsettings.*.Local.json
@@ -66,7 +69,18 @@ Thumbs.db
 node_modules/
 dist/
 
-# Ignore package lock or yarn lock if intentionally not tracking (change if you want to track)
+# Tooling
+.dotnet/tools/
+.terraform/
+
+# Ignore VS publish and temporary files
+*.publishsettings
+*.retry
+
+# Ignore temporary NuGet files
+.nuget/
+
+# Keep lockfiles tracked by default (uncomment if you prefer to ignore them)
 # package-lock.json
 # yarn.lock
 

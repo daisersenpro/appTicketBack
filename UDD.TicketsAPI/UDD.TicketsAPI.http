@@ -1,0 +1,6 @@
+@UDD.TicketsAPI_HostAddress = http://localhost:5105
+
+GET {{UDD.TicketsAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
